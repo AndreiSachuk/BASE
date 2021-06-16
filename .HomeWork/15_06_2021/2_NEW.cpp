@@ -3,6 +3,8 @@
 
 using namespace std;
 
+void findNumber(double);
+
 int main()
 {
     double input = 0;
@@ -10,6 +12,13 @@ int main()
     cout << "Enter finding position from 1 to needs ";
     cin >> input;
 
+    findNumber(input);
+
+    return 0;
+}
+
+void findNumber(double findNumber)
+{
     string strNew;
     int i = 0;
     do
@@ -17,9 +26,7 @@ int main()
         i++;
         int k = i * i;
         strNew += to_string(k);
-    } while (strNew.length() <= input);
+    } while (strNew.length() <= findNumber);
 
-    cout << input << " number is " << strNew[input - 1];
-    return 0;
+    cout << findNumber << " number is " << strNew[findNumber - 1];
 }
-
