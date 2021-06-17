@@ -3,61 +3,52 @@
 
 using namespace std;
 
-void findNumber(int);
-int digitCount(int);
+void findDigit(int);
 
 int main()
 {
-    int input = 0;
+    int digitPosition = 0;
 
     cout << "Enter digit position ";
-    cin >> input;
-
-    findNumber(input);
+    cin >> digitPosition;
+    findDigit(digitPosition);
 
     return 0;
 }
 
 int digitCount(int number)
 {
-    int countNum = number;
     int digitCounter = 0;
     while (true)
     {
         digitCounter++;
-        countNum /= 10;
-        if (countNum == 0)
-        {
-            break;
-        }
+        number /= 10;
+        if (number == 0)
+            return digitCounter;
     }
-    return digitCounter;
 }
 
-void findNumber(int findNumber)
+int getDigitFromNumber(int number, int posititon)
+{
+    int k = pow(10, (digitCount(number) - posititon));
+    return number / k % 10;
+}
+
+void findDigit(int digitPosition)
 {
     int count = 0;
-    int number = 0;
-    int numberNew = 0;
-    for (int i = 1; i < findNumber+1; i++)
+    for (int i = 1; i <= digitPosition; i++)
     {
-        number = i * i;
-        for (int j = 0; j < digitCount(number); j++)
+        int number = pow(i, 2);
+        for (int positionInNumber = 1; positionInNumber <= digitCount(number); positionInNumber++)
         {
-            int k = pow(10, (digitCount(number) - (j + 1)));
-            int m = pow(10, 1);
-            numberNew = number / k;
-            numberNew = numberNew % m;
-            do
+            int digitInNumber = getDigitFromNumber(number, positionInNumber);
+            count++;
+            if (count == digitPosition)
             {
-                count++;
-                if (count == findNumber)
-                {
-                    cout << findNumber << " digit is " << numberNew;
-                    return;
-                }
-                numberNew /= 10;
-            } while (numberNew > 0);
+                cout << digitPosition << " digit is " << digitInNumber;
+                return;
+            }
         }
     }
 }
