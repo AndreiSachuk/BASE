@@ -22,7 +22,7 @@ a:hover {
 .container {
   max-width: 1158px;
   margin: 0 auto;
-  padding: 10px;
+  padding-left: 10px;
 }
 
 .header {
@@ -100,9 +100,9 @@ a:hover {
 
 .header__img {
   position: absolute;
-  right: 90px;
-  bottom: -60px;
-  height: 94px;
+  right: 98px;
+  bottom: -62px;
+  height: 95px;
 }
 
 .aboutUs {
@@ -145,7 +145,7 @@ a:hover {
 
 .aboutUs__img {
   margin-right: 155px;
-  padding-left: 60px;
+  padding-left: 50px;
 }
 
 .aboutUs__content {
@@ -172,7 +172,7 @@ a:hover {
   font-family: "Raleway", sans-serif;
   font-size: 16px;
   color: #636464;
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
   text-align: left;
   margin-bottom: 25px;
   line-height: 28px;
@@ -214,5 +214,149 @@ a:hover {
       grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 15px;
   grid-row-gap: 13px;
+}
+
+.smallTeam {
+  padding: 100px;
+  background-color: #f9fbfb;
+  min-width: 1220px;
+}
+
+.smallTeam__img {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 6px;
+  grid-row-gap: 13px;
+}
+
+.smallTeam__description {
+  opacity: 0;
+  position: absolute;
+  padding: 40px  38px 40px 38px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  margin: 0 10px 10px 10px;
+  background-color: #70f6eb;
+  transition: opacity .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -ms-transition: opacity .5s ease-in-out;
+  -o-transition: opacity .5s ease-in-out;
+}
+
+.smallTeam__img-li:hover .smallTeam__description {
+  opacity: 1;
+}
+
+.smallTeam__img-li {
+  position: relative;
+}
+
+span a {
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.smallTeam_icon {
+  font-size: 13px;
+  display: inline;
+  margin-right: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+.smallTeam__description-text {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  color: #16312f;
+  letter-spacing: 0.5px;
+  text-align: left;
+  margin-bottom: 36px;
+  line-height: 23px;
+}
+
+.smallTeam__description-text-name {
+  text-align: left;
+  font-family: "Merriweather", serif;
+  font-size: 20px;
+  color: #2c3a39;
+  text-transform: uppercase;
+  font-style: bold;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.smallTeam__description-text-post {
+  text-align: center;
+  font-family: "Merriweather", serif;
+  font-style: italic;
+  font-size: 16px;
+  color: #767878;
+  text-transform: none;
+}
+
+.contactInformation {
+  padding-top: 80px;
+  font-family: "Montserrat", sans-serif;
+  background: url(https://db3pap005files.storage.live.com/y4mbf1Hwtp5aYlQmnN7kP62_AN_ABJaUYNLvtlW04n429TSupBSatIYogo-nlj6aCr4Rlp4anS0hjQAHfgBvXdGqn-5ArfXJTiHjeUhw4PP5C0OjBLjeZfK1shOujP7_u4T7LnA_A5RCC1WgToW0l9BhujD6Z40bxR0WrZGonCG6qCW7h14ej3KpGA8bwHb9a61mPMQqVr7q6Lf5uKyvbcZsw/OK.png?psid=1&width=1440&height=740) repeat 0 0;
+  background-position: bottom center;
+  color: #505050;
+  min-height: 705px;
+}
+
+.contactInformation__inner {
+  min-height: 705px;
+  min-width: 1440px;
+}
+
+.aboutUs__img {
+  margin-right: 155px;
+  padding-left: 50px;
+}
+
+.aboutUs__content {
+  width: 490px;
+}
+
+.aboutUs__img-img {
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(20, 20, 21, 0.13);
+          box-shadow: 0px 0px 30px 0px rgba(20, 20, 21, 0.13);
+}
+
+.aboutUs__content-title {
+  padding-top: 4px;
+  font-family: "Merriweather", serif;
+  font-size: 20px;
+  color: #646565;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  text-align: left;
+  margin-bottom: 23px;
+}
+
+.aboutUs__content-text {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  color: #636464;
+  letter-spacing: 0.8px;
+  text-align: left;
+  margin-bottom: 25px;
+  line-height: 28px;
+}
+
+.aboutUs__content-titlenext {
+  font-family: "Merriweather", serif;
+  font-size: 17px;
+  color: #646565;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  text-align: left;
+  margin-bottom: 20px;
+  padding-top: 10px;
 }
 /*# sourceMappingURL=style.css.map */
