@@ -188,4 +188,31 @@ a:hover {
   margin-bottom: 20px;
   padding-top: 10px;
 }
+
+.featuredWorks {
+  padding-top: 128px;
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+  min-height: 1165px;
+  color: #505050;
+}
+
+.title-text-little {
+  font-family: "Merriweather", serif;
+  font-size: 17px;
+  color: #848585;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.featuredWorks__img {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 13px;
+}
 /*# sourceMappingURL=style.css.map */
