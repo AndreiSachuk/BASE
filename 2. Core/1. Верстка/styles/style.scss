@@ -7,6 +7,15 @@
 a {
     text-decoration: none;
     color: inherit;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+a:hover {
+    text-shadow: 0px 5px 20px rgba(123, 41, 199, 0.8);
 }
 
 .container {
@@ -58,7 +67,6 @@ a {
     text-shadow: 0px 9px 10px rgba(0, 0, 0, 0.24);
 }
 
-
 .header__button {
     border-radius: 2px;
     border: 2px solid #777879;
@@ -79,11 +87,90 @@ a {
 }
 
 .header__img {
- 
     position: absolute;
     right: 90px;
     bottom: -60px;
     height: 94px;
 }
 
+.aboutUs {
+    padding-top: 128px;
+    font-family: "Montserrat", sans-serif;
+    background-color: #f8fafa;
+    min-height: 985px;
+    color: #505050;
+}
+
+.title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    color: #323333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.title-text {
+    font-family: "Merriweather", serif;
+    font-size: 18px;
+    color: #848585;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    text-align: center;
+    margin-bottom: 145px;
+}
+
+.aboutUs__inner {
+    display: flex;
+    justify-content: center;
+}
+
+.aboutUs__img {
+    margin-right: 155px;
+    padding-left: 60px;
+
+}
+
+.aboutUs__content {
+    width: 490px;
+}
+
+.aboutUs__img-img{
+    box-shadow: 0px 0px 30px 0px rgba(20, 20, 21, 0.13);
+}
+
+.aboutUs__content-title {
+    padding-top: 4px;
+    font-family: "Merriweather", serif;
+    font-size: 20px;
+    color: #646565;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    text-align: left;
+    margin-bottom: 23px;
+}
+
+
+.aboutUs__content-text {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    color: #636464;
+    letter-spacing: .8px;
+    text-align: left;
+    margin-bottom: 25px;
+    line-height: 28px;
+}
+
+.aboutUs__content-titlenext{
+    font-family: "Merriweather", serif;
+    font-size: 17px;
+    color: #646565;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    text-align: left;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
 
