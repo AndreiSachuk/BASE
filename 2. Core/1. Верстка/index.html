@@ -7,12 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Raleway&display=swap"
         rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Raleway&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
@@ -20,6 +16,8 @@
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=6b98f3d1-0eb9-4bc1-b0ab-cb7533a6631f"
+        type="text/javascript"></script>
     <title>shOpno</title>
 </head>
 
@@ -234,27 +232,78 @@
         <div class="container">
             <div class="contactInformation__inner">
                 <form class="contactInformation__form">
-                    <img class="aboutUs__img-img" src="#" alt="working_place"></a>
+                    <ul class="contactInformation__form-ul">
+                        <li>
+                            <input id="GET-name" type="text" name="name" placeholder="Name*">
+                        </li>
+                        <li>
+                            <input id="GET-subject" type="text" name="subject" placeholder="Subject*">
+                        </li>
+                        <li>
+                            <input id="GET-email" type="email" name="email" placeholder="E-mail*">
+                        </li>
+                        <li>
+                            <textarea id="msg" name="user_message" placeholder="Message*"></textarea>
+                        </li>
+                        <li class="contactInformation__form-button">
+                            <button type="submit">send message</button>
+                        </li>
+                    </ul>
                 </form>
 
                 <div class="contactInformation__inf">
-                    <div class="aboutUs__content-box">
-                        <div class="aboutUs__content-textbox">
-                            <p class="aboutUs__content-text">
-                                A visual approach is an approach to a runway at an airport
-                                conducted under instrument flight rules. The pilot must at all times have either the
-                                airport or the preceding aircraft in approach correct sight. conducted under instrument
-                                flight rules. The pilot must at all times.
-                            </p>
-                            <p class="aboutUs__content-text">
-                                Preceding aircraft in approach correct sight. conducted under instrument flight rules.
-                            </p>
-                        </div>
+                    <div class="contactInformation__inf-box">
+                        <p class="contactInformation__inf-arrd"> Adress line 1 </p>
+                        <p class="contactInformation__inf-arrd"> Adress line 2 </p>
+                        <p class="contactInformation__inf-phone">
+                            Phone: <a href="tel:+548 945645">+548 945645</a>
+                        </p>
+                        <p class="contactInformation__inf-fax">
+                            Fax: <a href="tel:+456456 54546">+456456 54546</a>
+                        </p>
+                        <br>
+                        <p class="contactInformation__inf-web">
+                            Web: <a href="http://www.designagency.net">www.designagency.net</a>
+                        </p>
+                        <p class="contactInformation__inf-web">
+                            E-mail: <a href="mailto:info@designagency.net">info@designagency.net</a>
+                        </p>
+                    </div>
+                    <br>
+                    <div class="contactInformation__inf-map" id="map">
                     </div>
                 </div>
-        
-        </div>
+
+            </div>
     </section>
+    <script type="text/javascript">
+
+        ymaps.ready(init);
+        var myMap;
+
+        function init() {
+
+            myMap = new ymaps.Map("map", {
+                center: [52.094256, 23.684553], // Координаты центра карты
+                zoom: 12 // Маштаб карты
+            });
+
+            myMap.controls.add(
+                new ymaps.control.ZoomControl()  // Добавление элемента управления картой
+            );
+
+            myPlacemark = new ymaps.Placemark([52.103275, 23.751636], { // Координаты метки объекта
+                balloonContent: "<div class='ya_map'>Заезжайте в гости!</div>" // Подсказка метки
+            }, {
+                preset: "twirl#redDotIcon" // Тип метки
+            });
+
+            myMap.geoObjects.add(myPlacemark); // Добавление метки
+            myPlacemark.balloon.open(); // Открытие подсказки метки
+
+        };
+
+    </script>
 </body>
 
 </html>
