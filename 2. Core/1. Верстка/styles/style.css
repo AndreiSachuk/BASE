@@ -202,6 +202,7 @@ a:hover {
 }
 
 .featuredWorks__img {
+  cursor: pointer;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
@@ -311,23 +312,82 @@ li {
   -ms-grid-columns: 54% 46%;
       grid-template-columns: 54% 46%;
   padding-top: 200px;
+  min-height: 785px;
 }
 
 .contactInformation__form {
   background-color: #495862;
-  opacity: .95;
+  opacity: 0.95;
+  height: 460px;
 }
 
 .contactInformation__form-ul {
-  padding: 20px;
+  padding: 27px 20px;
+  border: none;
 }
 
-/*.contactInformation__form-button {
+.contactInformation__form-li {
+  border: none;
+}
 
-}*/
+input,
+textarea {
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  color: #c8cdd0;
+  border: none;
+  margin: 10px;
+  background-color: #495862;
+  border-bottom: 1px solid #c8cdd0;
+  padding: 10px 0;
+  width: 95%;
+}
+
+.contactInformation__form-li-text {
+  margin-bottom: 30px;
+}
+
+::-webkit-input-placeholder {
+  color: #c8cdd0;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+}
+
+:-ms-input-placeholder {
+  color: #c8cdd0;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+}
+
+::-ms-input-placeholder {
+  color: #c8cdd0;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+}
+
+::placeholder {
+  color: #c8cdd0;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+}
+
+.contactInformation__form-button {
+  background-color: #6eeee4;
+  border: none;
+  color: #214744;
+  padding: 16px 32px;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 4px;
+  font-size: 16px;
+}
+
 .contactInformation__inf {
   background-color: #495862;
-  opacity: .95;
+  opacity: 0.95;
+  height: 460px;
 }
 
 .contactInformation__inf-box {
@@ -353,6 +413,53 @@ li {
 
 #map {
   width: 455px;
-  height: 255px;
+  height: 223px;
+}
+
+.footer {
+  background-color: #262b2e;
+  min-height: 280px;
+}
+
+.footer__text {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  color: #636464;
+  letter-spacing: 1px;
+  text-align: center;
+  padding-top: 85px;
+  margin-bottom: 10px;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+.footer__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer__btn {
+  display: inline-block;
+}
+
+.footer__btn a {
+  padding: 10px;
+  color: #bbb8b9;
+  background-color: #424648;
+  margin: 0 2px;
+}
+
+.footer__btn--facebook a {
+  padding: 10px 13.75px;
+}
+
+.footer__btn:hover .footer__btn {
+  background-color: #6eeee4;
+  color: #262b2e;
 }
 /*# sourceMappingURL=style.css.map */
