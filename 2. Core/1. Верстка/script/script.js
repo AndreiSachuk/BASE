@@ -13,7 +13,7 @@ function init() {
     );
 
     myPlacemark = new ymaps.Placemark([52.103275, 23.751636], { // Координаты метки объекта
-        balloonContent: "<div class='ya_map'>Заезжайте в гости!</div>" // Подсказка метки
+        balloonContent: "<div class='ya_map'>Сome to visit me</div>" // Подсказка метки
     }, {
         preset: "twirl#redDotIcon" // Тип метки
     });
