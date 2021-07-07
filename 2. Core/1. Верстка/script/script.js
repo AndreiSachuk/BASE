@@ -22,3 +22,9 @@ function init() {
     myPlacemark.balloon.open(); // Открытие подсказки метки
 
 };
+
+
+lightbox.option({
+    'resizeDuration': 800
+})
+
