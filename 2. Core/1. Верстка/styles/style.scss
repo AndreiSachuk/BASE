@@ -42,6 +42,7 @@ a {
     @include respond-to(handhelds) {
         padding: 0 10px;
         max-width: 100%;
+        text-align: center;
     }
 
     @include respond-to(wide-handhelds) {
@@ -195,12 +196,12 @@ a {
         &__content {
             padding: 0 0 100px;
         }
+        
         &__glass {
-            display: flex;
-            flex-direction: row-reverse;
             position: relative;
-            top: -30px;
-            right: 90px;
+            top: 30px;
+            right: 0px;
+            justify-content: center;
         }
         &__text {
             padding-top: 15px;
@@ -213,11 +214,10 @@ a {
             padding: 0 0 100px;
         }
         &__glass {
-            display: flex;
-            flex-direction: row-reverse;
             position: relative;
-            top: -30px;
-            right: 90px;
+            top: 30px;
+            right: 0px;
+            justify-content: center;
         }
         &__text {
             padding-top: 15px;

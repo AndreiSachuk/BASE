@@ -25,6 +25,7 @@ a {
   .container {
     padding: 0 10px;
     max-width: 100%;
+    text-align: center;
   }
 }
 
@@ -225,16 +226,12 @@ a {
     padding: 0 0 100px;
   }
   .welcome__glass {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
     position: relative;
-    top: -30px;
-    right: 90px;
+    top: 30px;
+    right: 0px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .welcome__text {
     padding-top: 15px;
@@ -247,16 +244,12 @@ a {
     padding: 0 0 100px;
   }
   .welcome__glass {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
     position: relative;
-    top: -30px;
-    right: 90px;
+    top: 30px;
+    right: 0px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .welcome__text {
     padding-top: 15px;
