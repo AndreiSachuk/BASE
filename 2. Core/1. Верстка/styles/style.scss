@@ -175,11 +175,13 @@ a {
         display: flex;
         flex-direction: row-reverse;
         position: relative;
-        //top: -30px;
+        top: -30px;
         right: 90px;
+        margin-left: 900px;
     }
     &__imglass {
         height: 95px;
+        
     }
 
     @include respond-to(handhelds) {
@@ -188,6 +190,8 @@ a {
         }
         
         &__glass {
+            display: block;
+            margin-left: 0;
             position: relative;
             top: 30px;
             right: 0px;
@@ -204,6 +208,8 @@ a {
             padding: 0 0 100px;
         }
         &__glass {
+            display: block;
+            margin-left: 0;
             position: relative;
             top: 30px;
             right: 0px;
@@ -220,11 +226,12 @@ a {
             padding: 0 0 100px;
         }
         &__glass {
-            display: flex;
-            flex-direction: row-reverse;
+            display: block;
+            margin-left: 0;
             position: relative;
-            top: -30px;
-            right: 90px;
+            top: 30px;
+            right: 0px;
+            justify-content: center;
         }
 
         &__text {
