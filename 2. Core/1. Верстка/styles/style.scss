@@ -4,6 +4,26 @@
     box-sizing: border-box;
 }
 
+@mixin respond-to($media) {
+    @if $media == handhelds {
+        @media only screen and (max-width: 479px) {
+            @content;
+        }
+    } @else if $media == wide-handhelds {
+        @media only screen and (min-width: 480px) and (max-width: 767px) {
+            @content;
+        }
+    } @else if $media == tablets {
+        @media only screen and (min-width: 768px) and (max-width: 959px) {
+            @content;
+        }
+    } @else if $media == PC {
+        @media only screen and (min-width: 960px) and (max-width: 1439px) {
+            @content;
+        }
+    }
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -22,12 +42,50 @@ a:hover {
 .container {
     max-width: 1138px;
     margin: 0 auto;
+    @include respond-to(handhelds) {
+        max-width: 320px;
+        text-align: center;
+    }
+
+    @include respond-to(wide-handhelds) {
+        max-width: 767px;
+    }
+
+    @include respond-to(tablets) {
+        max-width: 959px;
+    }
+
+    @include respond-to(PC) {
+        max-width: 1138px;
+    }
 }
 
 .header {
     background-color: #eff0f2;
     &__top {
         padding: 64px 0;
+    }
+    @include respond-to(handhelds) {
+        &__top {
+            text-align: center;
+        }
+    }
+
+    @include respond-to(wide-handhelds) {
+        &__top {
+            text-align: center;
+        }
+    }
+
+    @include respond-to(tablets) {
+        &__top {
+            text-align: center;
+        }
+    }
+    @include respond-to(PC) {
+        &__top {
+            padding: 64px 20px;
+        }
     }
 }
 
@@ -49,6 +107,21 @@ a:hover {
     letter-spacing: 1.1px;
     text-align: center;
     margin-bottom: 145px;
+    @include respond-to(handhelds) {
+        margin-bottom: 50px;
+    }
+
+    @include respond-to(wide-handhelds) {
+        margin-bottom: 70px;
+    }
+
+    @include respond-to(tablets) {
+        margin-bottom: 90px;
+    }
+
+    @include respond-to(PC) {
+        max-width: 1200px;
+    }
 }
 
 .welcome {
@@ -88,8 +161,55 @@ a:hover {
     &__glass {
         position: relative;
         top: -15px;
-        right: -440px;
+        left: 440px;
         height: 95px;
+    }
+    @include respond-to(handhelds) {
+        &__content {
+            padding: 0 0 100px;
+        }
+        &__glass {
+            top: 50px;
+            left: 0px;
+        }
+        &__text {
+            padding-top: 15px;
+            margin-bottom: 80px;
+        }
+    }
+
+    @include respond-to(wide-handhelds) {
+        &__content {
+            padding: 0 0 100px;
+        }
+        &__glass {
+            top: 50px;
+            left: 0px;
+        }
+        &__text {
+            padding-top: 15px;
+            margin-bottom: 80px;
+        }
+    }
+
+    @include respond-to(tablets) {
+        &__content {
+            padding: 0 0 100px;
+        }
+        &__glass {
+            left: 300px;
+        }
+
+        &__text {
+            padding-top: 15px;
+            margin-bottom: 80px;
+        }
+    }
+
+    @include respond-to(PC) {
+        &__glass {
+            left: 300px;
+        }
     }
 }
 
@@ -136,6 +256,98 @@ a:hover {
         margin-bottom: 25px;
         line-height: 28px;
     }
+    @include respond-to(handhelds) {
+        padding-top: 100px;
+        &__inner {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+            padding-bottom: 100px;
+        }
+        &__img-wrapper {
+            padding-left: 0;
+        }
+        &__img {
+            width: 300px;
+        }
+        &__content {
+            margin: 10px 10px;
+            max-width: 300px;
+            padding-left: 0px;
+        }
+        &__title {
+            text-align: center;
+        }
+        &__text {
+            text-align: center;
+        }
+    }
+
+    @include respond-to(wide-handhelds) {
+        padding-top: 100px;
+        &__inner {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+            padding-bottom: 100px;
+        }
+        &__img-wrapper {
+            padding-left: 0;
+        }
+        &__content {
+            max-width: 480px;
+            margin: 10px 10px;
+            padding-left: 0px;
+            justify-self: center;
+            align-self: center;
+        }
+        &__title {
+            text-align: center;
+        }
+        &__text {
+            text-align: center;
+        }
+    }
+
+    @include respond-to(tablets) {
+        padding-top: 100px;
+        &__inner {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+            padding-bottom: 100px;
+        }
+        &__img-wrapper {
+            padding-left: 0;
+        }
+        &__content {
+            max-width: 750px;
+            margin: 10px 10px;
+            padding-left: 0px;
+            justify-self: center;
+            align-self: center;
+        }
+        &__title {
+            text-align: center;
+        }
+        &__text {
+            text-align: center;
+        }
+    }
+
+    @include respond-to(PC) {
+        &__inner {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding-bottom: 100px;
+        }
+
+        &__content {
+            margin: 10px 10px;
+            width: 95%;
+            padding-left: 0px;
+        }
+        &__title {
+            text-align: center;
+        }
+    }
 }
 
 .featured {
@@ -151,12 +363,53 @@ a:hover {
         grid-row-gap: 13px;
         padding-bottom: 125px;
     }
+    @include respond-to(handhelds) {
+        &__img {
+            max-width: 320px;
+        }
+        &__list {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &__inner {
+            text-align: center;
+        }
+    }
+
+    @include respond-to(wide-handhelds) {
+        &__list {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &__inner {
+            text-align: center;
+        }
+    }
+
+    @include respond-to(tablets) {
+        &__list {
+            margin: auto;
+            grid-template-columns: repeat(2, 370px);
+            gap: 20px;
+        }
+        &__inner {
+            display: flex;
+        }
+    }
+
+    @include respond-to(PC) {
+        &__list {
+            margin: auto;
+            grid-template-columns: repeat(2, 370px);
+            gap: 20px;
+        }
+        &__inner {
+            display: flex;
+        }
+    }
 }
 
 .team {
     padding-top: 80px;
     background-color: #f9fbfb;
-
     &__list {
         margin-top: -25px;
         padding-bottom: 150px;
@@ -227,6 +480,46 @@ a:hover {
         text-align: left;
         margin-bottom: 36px;
         line-height: 23px;
+    }
+    @include respond-to(handhelds) {
+        &__list {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &__img {
+            max-width: 320px;
+        }
+    }
+
+    @include respond-to(wide-handhelds) {
+        &__list {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &__item {
+            justify-self: center;
+            align-self: center;
+        }
+    }
+
+    @include respond-to(tablets) {
+        &__list {
+            margin: auto;
+            grid-template-columns: repeat(2, 370px);
+            gap: 20px;
+        }
+        &__wrapper {
+            display: flex;
+        }
+    }
+
+    @include respond-to(PC) {
+        &__list {
+            margin: auto;
+            grid-template-columns: repeat(2, 370px);
+            gap: 20px;
+        }
+        &__wrapper {
+            display: flex;
+        }
     }
 }
 
@@ -327,6 +620,60 @@ a:hover {
         width: 465px;
         height: 223px;
     }
+    @include respond-to(handhelds) {
+        &__inner {
+            grid-template-columns: 1fr;
+            padding-top: 0;
+            padding-bottom: 100px;
+        }
+        #map {
+            padding-right: 20px;
+            width: 100%;
+            height: 223px;
+        }
+    }
+
+    @include respond-to(wide-handhelds) {
+        &__inner {
+            grid-template-columns: 1fr;
+            padding-top: 0;
+            margin: 20px;
+            padding-bottom: 100px;
+        }
+        #map {
+            padding-right: 20px;
+            width: 100%;
+            height: 223px;
+        }
+    }
+
+    @include respond-to(tablets) {
+        &__inner {
+            grid-template-columns: 1fr;
+            padding-top: 0;
+            margin: 20px;
+            padding-bottom: 100px;
+        }
+        #map {
+            padding-right: 20px;
+            width: 100%;
+            height: 223px;
+        }
+    }
+
+    @include respond-to(PC) {
+        &__inner {
+            grid-template-columns: repeat(2, 1fr);
+            padding-top: 0;
+            margin: 20px;
+            padding-bottom: 100px;
+        }
+        #map {
+            padding-right: 20px;
+            width: 100%;
+            height: 223px;
+        }
+    }
 }
 
 .footer {
@@ -364,7 +711,16 @@ a:hover {
     }
 }
 
-.lb-image{
+.lb-image {
     min-width: 600px;
     min-height: 600px;
+    @include respond-to(handhelds) {
+        min-width: 320px;
+        min-height: 320px;
+    }
+
+    @include respond-to(wide-handhelds) {
+        min-width: 480px;
+        min-height: 480px;
+    }
 }
