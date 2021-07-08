@@ -524,6 +524,11 @@ a {
         overflow: auto;
         max-height: 80px;
     }
+
+    &__social a:hover{
+        color: lightcoral;
+    }
+
     @include respond-to(handhelds) {
         &__description {
             &::after {

@@ -620,6 +620,10 @@ a {
   max-height: 80px;
 }
 
+.team__social a:hover {
+  color: lightcoral;
+}
+
 @media only screen and (max-width: 479px) {
   .team__description::after {
     content: "";
