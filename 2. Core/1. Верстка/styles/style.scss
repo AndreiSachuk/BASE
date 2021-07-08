@@ -25,6 +25,7 @@
 }
 
 a {
+    display: inline-block;
     text-decoration: none;
     color: inherit;
     transition: all 0.5s;
@@ -34,29 +35,28 @@ a {
     -o-transition: all 0.5s;
 }
 
-a:hover {
-    text-shadow: 10px 5px 20px rgba(65, 41, 199, 0.8);
-    color: #000;
-}
-
 .container {
     max-width: 1138px;
     margin: 0 auto;
+
     @include respond-to(handhelds) {
-        max-width: 320px;
-        text-align: center;
+        padding: 0 10px;
+        max-width: 100%;
     }
 
     @include respond-to(wide-handhelds) {
-        max-width: 767px;
+        padding: 0 10px;
+        max-width: 100%;
     }
 
     @include respond-to(tablets) {
-        max-width: 959px;
+        padding: 0 10px;
+        max-width: 100%;
     }
 
     @include respond-to(PC) {
-        max-width: 1138px;
+        max-width: 100%;
+        padding: 0 30px;
     }
 }
 
@@ -98,6 +98,13 @@ a:hover {
     letter-spacing: 2px;
     text-align: center;
     margin-bottom: 12px;
+    @include respond-to(handhelds) {
+        font-size: 30px;
+    }
+
+    @include respond-to(wide-handhelds) {
+        font-size: 30px;
+    }
 }
 .title-text {
     font-family: "Merriweather", serif;
@@ -118,10 +125,6 @@ a:hover {
     @include respond-to(tablets) {
         margin-bottom: 90px;
     }
-
-    @include respond-to(PC) {
-        max-width: 1200px;
-    }
 }
 
 .welcome {
@@ -133,7 +136,9 @@ a:hover {
     &__content {
         padding: 132px 0 115px;
         &-mark {
+            display: inline-block;
             background-color: #b2f2ee;
+            padding: 3px 0;
         }
     }
     &__title {
@@ -141,10 +146,24 @@ a:hover {
         font-weight: 700;
         letter-spacing: 2.8px;
         text-shadow: 0px 9px 10px rgba(0, 0, 0, 0.24);
+        margin-bottom: 5px;
+        @include respond-to(handhelds) {
+            font-size: 32px;
+        }
+
+        @include respond-to(wide-handhelds) {
+            font-size: 32px;
+        }
     }
     &__text {
-        padding-top: 15px;
-        margin-bottom: 160px;
+        @include respond-to(handhelds) {
+            font-size: 25px;
+        }
+
+        @include respond-to(wide-handhelds) {
+            font-size: 25px;
+        }
+        margin-bottom: 140px;
         font-size: 45px;
         letter-spacing: 2px;
         text-shadow: 0px 9px 10px rgba(0, 0, 0, 0.24);
@@ -152,25 +171,36 @@ a:hover {
     &__button {
         border-radius: 2px;
         border: 2px solid #777879;
-        padding: 13px 45px;
+        padding: 15px 45px;
         font-size: 18px;
         letter-spacing: 1.5px;
         color: #606061;
         cursor: pointer;
+        &:hover {
+            background-color: lightblue;
+        }
     }
     &__glass {
+        display: flex;
+        flex-direction: row-reverse;
         position: relative;
-        top: -15px;
-        left: 440px;
+        top: -30px;
+        right: 90px;
+    }
+    &__imglass {
         height: 95px;
     }
+
     @include respond-to(handhelds) {
         &__content {
             padding: 0 0 100px;
         }
         &__glass {
-            top: 50px;
-            left: 0px;
+            display: flex;
+            flex-direction: row-reverse;
+            position: relative;
+            top: -30px;
+            right: 90px;
         }
         &__text {
             padding-top: 15px;
@@ -183,8 +213,11 @@ a:hover {
             padding: 0 0 100px;
         }
         &__glass {
-            top: 50px;
-            left: 0px;
+            display: flex;
+            flex-direction: row-reverse;
+            position: relative;
+            top: -30px;
+            right: 90px;
         }
         &__text {
             padding-top: 15px;
@@ -197,7 +230,11 @@ a:hover {
             padding: 0 0 100px;
         }
         &__glass {
-            left: 300px;
+            display: flex;
+            flex-direction: row-reverse;
+            position: relative;
+            top: -30px;
+            right: 90px;
         }
 
         &__text {
@@ -208,21 +245,23 @@ a:hover {
 
     @include respond-to(PC) {
         &__glass {
-            left: 300px;
+            display: flex;
+            flex-direction: row-reverse;
+            position: relative;
+            top: -30px;
+            right: 90px;
         }
     }
 }
 
 .about {
-    padding-top: 123px;
+    padding: 123px 0;
     font-family: "Montserrat", sans-serif;
     background-color: #f8fafa;
-    min-height: 985px;
     color: #505050;
     &__inner {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        padding-bottom: 123px;
     }
     &__img-wrapper {
         padding-left: 45px;
@@ -234,7 +273,6 @@ a:hover {
     }
     &__content {
         justify-self: left;
-        width: 570px;
         padding-left: 90px;
     }
     &__title {
@@ -257,21 +295,19 @@ a:hover {
         line-height: 28px;
     }
     @include respond-to(handhelds) {
-        padding-top: 100px;
+        padding: 100px 0;
         &__inner {
-            grid-template-columns: repeat(1, 1fr);
-            gap: 20px;
-            padding-bottom: 100px;
+            grid-template-columns: repeat(1, 100%);
         }
         &__img-wrapper {
             padding-left: 0;
         }
         &__img {
-            width: 300px;
+            width: 100%;
+            margin-bottom: 20px;
         }
         &__content {
-            margin: 10px 10px;
-            max-width: 300px;
+            max-width: 100%;
             padding-left: 0px;
         }
         &__title {
@@ -287,17 +323,17 @@ a:hover {
         &__inner {
             grid-template-columns: repeat(1, 1fr);
             gap: 20px;
-            padding-bottom: 100px;
         }
         &__img-wrapper {
             padding-left: 0;
         }
+        &__img {
+            width: 100%;
+            margin-bottom: 20px;
+        }
         &__content {
-            max-width: 480px;
-            margin: 10px 10px;
+            max-width: 100%;
             padding-left: 0px;
-            justify-self: center;
-            align-self: center;
         }
         &__title {
             text-align: center;
@@ -308,18 +344,15 @@ a:hover {
     }
 
     @include respond-to(tablets) {
-        padding-top: 100px;
+        padding: 100px 0;
         &__inner {
             grid-template-columns: repeat(1, 1fr);
             gap: 20px;
-            padding-bottom: 100px;
         }
         &__img-wrapper {
             padding-left: 0;
         }
         &__content {
-            max-width: 750px;
-            margin: 10px 10px;
             padding-left: 0px;
             justify-self: center;
             align-self: center;
@@ -351,7 +384,7 @@ a:hover {
 }
 
 .featured {
-    padding-top: 125px;
+    padding: 125px 0;
     &__inner {
         margin-top: -25px;
     }
@@ -361,11 +394,10 @@ a:hover {
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 15px;
         grid-row-gap: 13px;
-        padding-bottom: 125px;
     }
     @include respond-to(handhelds) {
         &__img {
-            max-width: 320px;
+            max-width: 100%;
         }
         &__list {
             grid-template-columns: repeat(1, 1fr);
@@ -376,6 +408,9 @@ a:hover {
     }
 
     @include respond-to(wide-handhelds) {
+        &__img {
+            max-width: 100%;
+        }
         &__list {
             grid-template-columns: repeat(1, 1fr);
         }
@@ -409,23 +444,30 @@ a:hover {
 
 .team {
     padding-top: 80px;
+    padding-bottom: 150px;
     background-color: #f9fbfb;
     &__list {
-        margin-top: -25px;
-        padding-bottom: 150px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 15px;
         grid-row-gap: 13px;
     }
     &__description {
+        &::after {
+            content: "";
+            position: absolute;
+            right: 270px;
+            top: -30px;
+            border: 10px solid transparent;
+            border-bottom: 20px solid #70f6eb;
+        }
         opacity: 0;
         position: absolute;
-        padding: 40px 38px 40px 38px;
-        bottom: 10px;
-        left: 10px;
-        right: 10px;
-        margin: 0 10px 10px 10px;
+        padding: 40px 38px;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        max-height: 230px;
         background-color: #70f6eb;
         transition: opacity 0.5s ease-in-out;
         -webkit-transition: opacity 0.5s ease-in-out;
@@ -434,12 +476,11 @@ a:hover {
         -o-transition: opacity 0.5s ease-in-out;
     }
     &__item:hover {
+        cursor: pointer;
+        position: relative;
         .team__description {
             opacity: 1;
         }
-    }
-    &__item {
-        position: relative;
     }
 
     &__items {
@@ -480,13 +521,29 @@ a:hover {
         text-align: left;
         margin-bottom: 36px;
         line-height: 23px;
+        overflow: auto;
+        max-height: 80px;
     }
     @include respond-to(handhelds) {
+        &__description {
+            &::after {
+                content: "";
+                position: absolute;
+                right: 210px;
+                top: -30px;
+                border: 10px solid transparent;
+                border-bottom: 20px solid #70f6eb;
+            }
+        }
         &__list {
             grid-template-columns: repeat(1, 1fr);
         }
         &__img {
-            max-width: 320px;
+            max-width: 100%;
+        }
+        &__item {
+            justify-self: center;
+            align-self: center;
         }
     }
 
@@ -497,6 +554,9 @@ a:hover {
         &__item {
             justify-self: center;
             align-self: center;
+        }
+        &__img {
+            max-width: 100%;
         }
     }
 
@@ -524,10 +584,14 @@ a:hover {
 }
 
 .contact {
+    textarea {
+        resize: none;
+    }
     background: url(https://db3pap005files.storage.live.com/y4mbf1Hwtp5aYlQmnN7kP62_AN_ABJaUYNLvtlW04n429TSupBSatIYogo-nlj6aCr4Rlp4anS0hjQAHfgBvXdGqn-5ArfXJTiHjeUhw4PP5C0OjBLjeZfK1shOujP7_u4T7LnA_A5RCC1WgToW0l9BhujD6Z40bxR0WrZGonCG6qCW7h14ej3KpGA8bwHb9a61mPMQqVr7q6Lf5uKyvbcZsw/OK.png?psid=1&width=1440&height=740)
         no-repeat;
+    background-size: 100%;
     background-position: bottom center;
-    background-color: #f9fbfb;
+    padding: 120px 0;
     &__input {
         font-family: "Raleway", sans-serif;
         font-size: 15px;
@@ -541,22 +605,14 @@ a:hover {
     }
     &__inner {
         display: grid;
-        grid-gap: 20px;
-        grid-template-columns: 54% 46%;
-        padding-top: 150px;
-        padding-bottom: 130px;
+        grid-gap: 2%;
+        grid-template-columns: 54% 44%;
     }
     &__form {
         background-color: #495862;
         opacity: 0.95;
         height: 460px;
-    }
-
-    &__list {
-        padding: 27px 20px;
-    }
-
-    &__form {
+        padding: 30px;
         ::placeholder {
             color: #c8cdd0;
             font-family: "Raleway", sans-serif;
@@ -572,7 +628,6 @@ a:hover {
     }
 
     &__info {
-        padding-left: 30px;
         font-family: "Raleway", sans-serif;
         font-size: 15px;
         color: #c8cdd0;
@@ -582,10 +637,13 @@ a:hover {
         &-padding {
             padding-top: 23px;
         }
+        & a:hover {
+            text-decoration: underline;
+        }
     }
 
     &__description {
-        padding-top: 32px;
+        padding: 30px;
     }
 
     &__button {
@@ -599,12 +657,20 @@ a:hover {
         font-family: "Montserrat", sans-serif;
         letter-spacing: 4px;
         font-size: 16px;
-        margin-top: 10px;
-        margin-left: 30px;
+        margin-top: 30px;
+
+        transition: background-color 1s;
+        -webkit-transition: background-color 1s;
+        -moz-transition: background-color 1s;
+        -ms-transition: background-color 1s;
+        -o-transition: background-color 1s;
+        &:hover {
+            background-color: #3fdd81;
+        }
     }
 
     &__map {
-        padding-left: 20px;
+        margin-top: 15px;
     }
 
     .ya_map {
@@ -614,22 +680,15 @@ a:hover {
     }
 
     #map {
-        position: absolute;
-        left: 0;
-        bottom: 20px;
-        width: 465px;
+        width: 100%;
         height: 223px;
     }
     @include respond-to(handhelds) {
+        &__form {
+            width: 100%;
+        }
         &__inner {
             grid-template-columns: 1fr;
-            padding-top: 0;
-            padding-bottom: 100px;
-        }
-        #map {
-            padding-right: 20px;
-            width: 100%;
-            height: 223px;
         }
         &__button {
             margin: auto;
@@ -640,25 +699,13 @@ a:hover {
         &__inner {
             grid-template-columns: 1fr;
             padding-top: 0;
-            margin: 20px;
-            padding-bottom: 100px;
-        }
-        #map {
-            padding-right: 20px;
             width: 100%;
-            height: 223px;
         }
     }
 
     @include respond-to(tablets) {
-        &__inner {
-            grid-template-columns: 1fr;
-            padding-top: 0;
-            margin: 20px;
-            padding-bottom: 100px;
-        }
+        
         #map {
-            padding-right: 20px;
             width: 100%;
             height: 223px;
         }
@@ -668,11 +715,8 @@ a:hover {
         &__inner {
             grid-template-columns: repeat(2, 1fr);
             padding-top: 0;
-            margin: 20px;
-            padding-bottom: 100px;
         }
         #map {
-            padding-right: 20px;
             width: 100%;
             height: 223px;
         }
@@ -680,15 +724,14 @@ a:hover {
 }
 
 .footer {
+    padding: 85px 0;
     background-color: #262b2e;
-    min-height: 280px;
     &__text {
         font-family: "Raleway", sans-serif;
         font-size: 16px;
         color: #636464;
         letter-spacing: 1px;
         text-align: center;
-        padding-top: 85px;
         margin-bottom: 15px;
         line-height: 28px;
         text-transform: uppercase;
