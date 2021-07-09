@@ -622,6 +622,10 @@ a {
   color: lightcoral;
 }
 
+.team__btn-wrapper {
+  display: none;
+}
+
 @media only screen and (max-width: 479px) {
   .team__description::after {
     content: "";

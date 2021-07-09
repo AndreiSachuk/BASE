@@ -545,6 +545,11 @@ a {
         color: lightcoral;
     }
 
+    &__btn-wrapper{
+        
+        display: none;
+    }
+
     @include respond-to(handhelds) {
         &__description {
             &::after {
